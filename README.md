@@ -127,8 +127,8 @@ After finishing your required elements, you can push your work further. These go
 **IMPORTANT:** Do not break any MPV functionality by adding "stretch" code! Keep an eye on those tests!
 
 - [ ] Deploy the API to Heroku.
-- [ ] Configure the API to support environment variables.
-- [ ] Use middleware for validation of incoming data.
+- [X] Configure the API to support environment variables.
+- [X] Use middleware for validation of incoming data.
 
 ## Submission format
 
@@ -145,7 +145,7 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 1. The core features of Node.js and Express and why they are useful.
    Node.js is a runtime environment that allows JavaScript to run outside of the browser. Node.js is very useful for developing web servers. Its core feature are the fact it uses the same language for the entire stack. Like JS it is also single threaded & allows for asynchronous programming. Furthermore, it also has access to the NPM registry an extensive ecosystem of open source libraries which take the form of NPM modules.
 
-Express is a lightweight JS framework that works on top of the NodeJS web server. It works to build back-end webservers, APIs, serve SPAs & can power real-time applications.
+Express is a lightweight JS framework that works on top of the NodeJS web server. It works to build back-end web-servers, APIs, serve SPAs & can power real-time applications.
 
 1. Understand and explain the use of Middleware.
    Middlewares are functions that intercept the request & response bodies and can perform operations on them which may or may not modify them. Some examples of these include the ability to log the request method, as well as its body, validation, authentication, error handling, routing among other possibilities. They extend the use of our server while maintaining lighter file sizes because of their on/off nature.

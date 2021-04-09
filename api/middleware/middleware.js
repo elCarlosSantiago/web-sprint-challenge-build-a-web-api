@@ -68,7 +68,7 @@ const validateProject = async (req, res, next) => {
 		next(err);
 	}
 };
-
+//eslint-disable-next-line
 const errorHandler = (err, req, res, next) => {
 	res.status(err.status || 500).json({
 		message: err.message,
