@@ -38,9 +38,9 @@ Your finished project must include all of the following requirements:
 
 A _"test"_ script already exists you can use to run tests against your code.
 
-- [ ] Write an _npm script_ named _"start"_ that uses `node` to run the API server.
-- [ ] Write an _npm script_ named _"server"_ that uses `nodemon`to run the API server.
-- [ ] Install _nodemon_ as a development dependency only that would not be used in production.
+- [x] Write an _npm script_ named _"start"_ that uses `node` to run the API server.
+- [x] Write an _npm script_ named _"server"_ that uses `nodemon`to run the API server.
+- [x] Install _nodemon_ as a development dependency only that would not be used in production.
 
 #### Build an API
 
@@ -132,18 +132,29 @@ After finishing your required elements, you can push your work further. These go
 
 ## Submission format
 
-- [ ] Submit via Codegrade by pushing commits to your `<firstName-lastName>` branch on Github.
-- [ ] Create a pull-request to merge `<firstName-lastName>` branch into main.
-- [ ] Check Codegrade for automated feedback.
-- [ ] Check Codegrade on Monday following the Sprint Challenge for reviewer feedback.
-- [ ] New commits will be evaluated by Codegrade if pushed _before_ the sprint challenge deadline.
+- [x] Submit via Codegrade by pushing commits to your `<firstName-lastName>` branch on Github.
+- [x] Create a pull-request to merge `<firstName-lastName>` branch into main.
+- [x] Check Codegrade for automated feedback.
+- [x] Check Codegrade on Monday following the Sprint Challenge for reviewer feedback.
+- [x] New commits will be evaluated by Codegrade if pushed _before_ the sprint challenge deadline.
 
 ## Interview Questions
 
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. The core features of Node.js and Express and why they are useful.
+   Node.js is a runtime environment that allows JavaScript to run outside of the browser. Node.js is very useful for developing web servers. Its core feature are the fact it uses the same language for the entire stack. Like JS it is also single threaded & allows for asynchronous programming. Furthermore, it also has access to the NPM registry an extensive ecosystem of open source libraries which take the form of NPM modules.
+
+Express is a lightweight JS framework that works on top of the NodeJS web server. It works to build back-end webservers, APIs, serve SPAs & can power real-time applications.
+
 1. Understand and explain the use of Middleware.
+   Middlewares are functions that intercept the request & response bodies and can perform operations on them which may or may not modify them. Some examples of these include the ability to log the request method, as well as its body, validation, authentication, error handling, routing among other possibilities. They extend the use of our server while maintaining lighter file sizes because of their on/off nature.
+
 1. The basic principles of the REST architectural style.
+   The crux of the REST (REpresentational State Transfer) architectural style is the concept of the resource. Everything we interact with in an application is a resource. The resource is exchanged between a client & a server. It will be stateless & cacheable meaning there must be no stored context on the server. Resources are exchanged across a layered system meaning that the client and server may or may not communicate directly as there may be other actors in between the exchanges (middleware). RESTful architecture also promotes uniform interfaces where every resource be accessible through a single, descriptive URL & every interaction with that resource should be through the same URL. Additionally, they must be order agnostic, the user must be able to access the resources in the order they feel like without hinderance.
+
 1. Understand and explain the use of Express Routers.
+   Express Router allows us to break up our applications into smaller, more modular files. Routers help us create files with organized endpoints for specific resources which fits snugly into RESTful philosophies.
+
 1. Describe tooling used to manually test the correctness of an API.
+   Postman, HTTPie, Nodemon & VScode's internal debugger are all great tools for manually testing APIs. Postman and HTTPies take on the role of the client and provide us with helpful ways of structuring our requests and reading our responses. Nodemon is a self-restarting server which is very useful to automate a repetitive operation & the VScode internal debugger almost works like middleware by allowing us to pause & step-through (or in) our code execution. This allows us to inspect our code more thoroughly.
