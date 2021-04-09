@@ -50,6 +50,25 @@ const validateAction = async (req, res, next) => {
 	}
 };
 
+const validateProject = async (req, res, next) => {
+	const { name, description } = req.body;
+	try {
+		if (!name || !name.trim() || !description || !description.trim()) {
+			res.status(400).json({
+				message: 'Must include project name & description.',
+			});
+		} else if (description.length > 128) {
+			res.status(400).json({
+				message: 'Description must be less than 128 characters.',
+			});
+		} else {
+			next();
+		}
+	} catch (err) {
+		next(err);
+	}
+};
+
 const errorHandler = (err, req, res, next) => {
 	res.status(err.status || 500).json({
 		message: err.message,
@@ -60,4 +79,5 @@ module.exports = {
 	validateId,
 	validateAction,
 	errorHandler,
+	validateProject,
 };
