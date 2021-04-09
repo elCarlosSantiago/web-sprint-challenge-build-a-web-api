@@ -30,8 +30,26 @@ router.post('/', validateAction, async (req, res, next) => {
 		next(err);
 	}
 });
-router.put('/:id', validateId, validateAction, async (req, res, next) => {});
-router.delete('/:id', async (req, res, next) => {});
+router.put('/:id', validateId, validateAction, async (req, res, next) => {
+	const changes = req.body;
+	const { id } = req.params;
+	try {
+		const updatedAction = await Actions.update(id, changes);
+		res.status(201).json(updatedAction);
+	} catch (err) {
+		next(err);
+	}
+});
+router.delete('/:id', async (req, res, next) => {
+	const { id } = req.params;
+	try {
+		const deletedAction = await Actions.get(id);
+		await Actions.remove(id);
+		res.json(deletedAction);
+	} catch (err) {
+		next(err);
+	}
+});
 
 router.use(errorHandler);
 
